@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+SSH_ALIASES=$(grep -E '^Host ' ~/.ssh/config | awk '{print $2}' | fzf --prompt="Select SSH alias: ")
+# If no alias is selected, exit
+if [ -z "$SSH_ALIASES" ]; then
+  echo "No alias selected. Exiting."
+  exit 1
+fi
+# Retrieve the SSH password for the server
+
+PASSWORD_ENTRY=$(bw get password "ssh-$SSH_ALIASES")
+echo -n "$PASSWORD_ENTRY" | xclip -selection clipboard
+if [ $? -ne 0 ]; then
+  echo "Failed to retrieve password for ssh-$SSH_ALIASES"
+  exit 1
+fi
+
+# Connect to the server using SSH with the password
+sshpass -p "$PASSWORD_ENTRY" ssh "$SSH_ALIASES"
