@@ -72,11 +72,14 @@ fi
 echo
 NEEDS_SECRETS=0
 while IFS= read -r example; do
-  target="${example%.example}"
+  # repo path -> the $HOME path stow links it to: strip "<dotfiles>/<package>/"
+  rel="${example#$DOTFILES_DIR/}"; rel="${rel#*/}"
+  linked="$HOME/$rel"
+  target="${linked%.example}"
   if [ ! -e "$target" ]; then
     [ "$NEEDS_SECRETS" -eq 0 ] && echo "==> Fill in your own values:"
     NEEDS_SECRETS=1
-    printf '    cp %s \\\n       %s\n' "${example/#$HOME/\~}" "${target/#$HOME/\~}"
+    printf '    cp %s \\\n       %s\n' "~/${rel}" "~/${rel%.example}"
   fi
 done < <(find "$DOTFILES_DIR" -name '*.example' -type f | sort)
 
