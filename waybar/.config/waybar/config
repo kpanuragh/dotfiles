@@ -1,0 +1,207 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 4,
+  "margin-top": 6,
+  "margin-left": 12,
+  "margin-right": 12,
+  "height": 34,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap",
+    "hyprland/window",
+    "image#albumart",
+    "custom/music"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "custom/temperature",
+    "disk",
+    "battery",
+    "tray",
+    "custom/clickup",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "urgent": ""
+    },
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "hyprland/submap": {
+    "format": " {}",
+    "max-length": 16,
+    "tooltip": false
+  },
+  "hyprland/window": {
+    "max-length": 60,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) - Brave": "  $1",
+      "(.*) - Visual Studio Code": "  $1",
+      "(.*) - kitty": "  $1",
+      "(.*) - foot": "  $1",
+      "^$": ""
+    }
+  },
+  "clock": {
+    "format": "  {:%a %d %b   %H:%M}",
+    "format-alt": " {:%Y-%m-%d  %H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months": "<span color='#B76BC2'><b>{}</b></span>",
+        "days": "<span color='#F6E4EE'><b>{}</b></span>",
+        "weeks": "<span color='#5FD8FF'><b>W{}</b></span>",
+        "weekdays": "<span color='#FFC978'><b>{}</b></span>",
+        "today": "<span color='#FF4D9D'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip-format-activated": "Idle inhibitor: ON (sleep/lock disabled)",
+    "tooltip-format-deactivated": "Idle inhibitor: off"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": " off",
+    "tooltip-format": "{ifname} via {gwaddr}\n{ipaddr}/{cidr}",
+    "interval": 5,
+    "on-click": "nm-connection-editor"
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "interval": 3,
+    "tooltip": true,
+    "on-click": "kitty -e htop"
+  },
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB",
+    "on-click": "kitty -e htop"
+  },
+  "custom/temperature": {
+    "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+    "interval": 4,
+    "return-type": "json",
+    "format": "{} ",
+    "tooltip": true
+  },
+  "disk": {
+    "format": " {percentage_used}%",
+    "path": "/",
+    "interval": 60,
+    "tooltip-format": "{used} used / {total} total ({free} free) on /"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format": "{timeTo}\n{power} W"
+  },
+  "tray": {
+    "spacing": 8,
+    "icon-size": 18
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/power-menu.sh"
+  },
+  "custom/clickup": {
+    "exec": "/home/anuragh/.config/clickup/scripts/waybar-status.sh",
+    "return-type": "json",
+    "interval": 1,
+    "signal": 8,
+    "tooltip": true,
+    "on-click": "/home/anuragh/.config/clickup/scripts/track-pick.sh",
+    "on-click-right": "/home/anuragh/.config/clickup/scripts/track-stop.sh"
+  },
+  "image#albumart": {
+    "path": "/home/anuragh/.cache/waybar/albumart.png",
+    "size": 22,
+    "interval": 2,
+    "signal": 11,
+    "on-click": "playerctl play-pause && pkill -RTMIN+11 waybar",
+    "tooltip": false
+  },
+  "custom/music": {
+    "exec": "/home/anuragh/.config/waybar/scripts/music.sh",
+    "return-type": "json",
+    "interval": 2,
+    "signal": 11,
+    "escape": true,
+    "max-length": 45,
+    "on-click": "playerctl play-pause && pkill -RTMIN+11 waybar",
+    "on-click-right": "playerctl next && pkill -RTMIN+11 waybar",
+    "on-click-middle": "playerctl previous && pkill -RTMIN+11 waybar",
+    "on-scroll-up": "playerctl next && pkill -RTMIN+11 waybar",
+    "on-scroll-down": "playerctl previous && pkill -RTMIN+11 waybar"
+  }
+}

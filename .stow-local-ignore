@@ -1,0 +1,8 @@
+# Repo-level files that must never be symlinked into $HOME
+\.git
+\.gitignore
+\.stow-local-ignore
+README\.md
+LICENSE
+install\.sh
+docs

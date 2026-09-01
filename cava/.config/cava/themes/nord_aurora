@@ -1,0 +1,12 @@
+# Nord Aurora — full "northern lights" spectrum (Frost → Aurora), bottom → top.
+# More colorful alternative to 'nord'. Background left unset for transparency.
+[color]
+gradient = 1
+gradient_color_1 = '#8fbcbb'
+gradient_color_2 = '#88c0d0'
+gradient_color_3 = '#81a1c1'
+gradient_color_4 = '#5e81ac'
+gradient_color_5 = '#b48ead'
+gradient_color_6 = '#a3be8c'
+gradient_color_7 = '#ebcb8b'
+gradient_color_8 = '#bf616a'

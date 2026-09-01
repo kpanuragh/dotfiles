@@ -1,0 +1,24 @@
+ConfigFile = '/home/anuragh/.config/lazysql/config.toml'
+
+[application]
+DefaultPageSize = 300
+DisableSidebar = false
+SidebarOverlay = false
+MaxQueryHistoryPerConnection = 100
+TreeWidth = 30
+JSONViewerWordWrap = false
+EnterOpensJSONViewer = false
+
+[[database]]
+Name = 'Globechain'
+URL = 'postgresql://USER:PASSWORD@127.0.0.1:5432/DBNAME?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'neptune'
+URLParams = ''
+ReadOnly = false
+Schemas = []
+Commands = []

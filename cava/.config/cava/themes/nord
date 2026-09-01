@@ -1,0 +1,14 @@
+# Nord — smooth Frost-blue → Aurora-purple gradient (bottom → top).
+# Matches the blue/purple Kath.png wallpaper + Nord glass-morphism desktop.
+# No background/foreground set on purpose, so kitty's transparency & blur
+# show through and the bars keep the glass look.
+[color]
+gradient = 1
+gradient_color_1 = '#5e81ac'
+gradient_color_2 = '#6d8bb5'
+gradient_color_3 = '#81a1c1'
+gradient_color_4 = '#88c0d0'
+gradient_color_5 = '#9aafce'
+gradient_color_6 = '#a99cc4'
+gradient_color_7 = '#b48ead'
+gradient_color_8 = '#c8a3c9'

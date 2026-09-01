@@ -1,0 +1,34 @@
+# Swaylock — Catppuccin Mocha
+daemonize
+ignore-empty-password
+show-failed-attempts
+indicator
+indicator-radius=120
+indicator-thickness=10
+indicator-caps-lock
+clock
+font=JetBrains Mono
+font-size=22
+color=1e1e2eff
+inside-color=1e1e2ecc
+inside-clear-color=89b4faaa
+inside-caps-lock-color=fab387aa
+inside-ver-color=cba6f7aa
+inside-wrong-color=f38ba8aa
+ring-color=cba6f7
+ring-clear-color=89b4fa
+ring-caps-lock-color=fab387
+ring-ver-color=b4befe
+ring-wrong-color=f38ba8
+key-hl-color=a6e3a1
+bs-hl-color=f38ba8
+separator-color=00000000
+text-color=cdd6f4
+text-clear-color=cdd6f4
+text-caps-lock-color=cdd6f4
+text-ver-color=cdd6f4
+text-wrong-color=cdd6f4
+caps-lock-bs-hl-color=fab387
+caps-lock-key-hl-color=a6e3a1
+fade-in=0.2
+effect-blur=8x4

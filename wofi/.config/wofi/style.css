@@ -1,0 +1,51 @@
+/* =========================================================================
+ * Wofi — Nord (Frost accent), matches Waybar
+ * ========================================================================= */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+}
+
+window {
+  background: rgba(36, 41, 51, 0.52);
+  border: 1px solid rgba(136, 192, 208, 0.22);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+#input {
+  background: rgba(59, 66, 82, 0.42);
+  color: #eceff4;
+  border: 1px solid rgba(136, 192, 208, 0.20);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+#input:focus {
+  outline: none;
+  border-color: #88c0d0;
+}
+#input image { margin-right: 8px; }
+
+#inner-box, #outer-box, #scroll {
+  background: transparent;
+  border: none;
+}
+
+#entry {
+  padding: 8px 12px;
+  margin: 2px 0;
+  border-radius: 10px;
+  color: #eceff4;
+}
+#entry:selected {
+  background: linear-gradient(135deg, #88c0d0, #5e81ac);
+  color: #2e3440;
+}
+#entry image {
+  margin-right: 10px;
+}
+#text {
+  color: inherit;
+}

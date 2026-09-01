@@ -1,0 +1,8 @@
+[safe]
+	directory = /home/anuragh/Projects/limo/limoverse
+[http]
+	version = HTTP/1.1
+	postBuffer = 524288000
+[user]
+	email = kpanuragh@gmail.com
+	name = Anuragh KP

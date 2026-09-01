@@ -1,0 +1,17 @@
+# Secrets — real values live outside the repo; commit only *.example
+lazysql/.config/lazysql/config.toml
+clickup/.config/clickup/config.json
+clickup/.config/clickup/token
+clickup/.config/clickup/tasks-cache.json
+
+# Generated / machine-local state
+**/__pycache__/
+*.pyc
+theme/.config/theme/backups/
+*.bak
+*.bak-*
+*.bak.*
+
+# Editor / OS noise
+*.swp
+.DS_Store

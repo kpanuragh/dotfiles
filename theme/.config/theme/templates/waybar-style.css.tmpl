@@ -1,0 +1,111 @@
+/* =========================================================================
+ * Waybar — {{ name_title }}
+ * Colours come from theme.css, which is generated from
+ * theme/palettes/{{ name }}.toml. Do not hardcode hex values here.
+ * ========================================================================= */
+@import "theme.css";
+
+* {
+  font-family: "{{ font.family }}", "Noto Color Emoji", monospace;
+  font-size: {{ font.bar_size }}px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+window#waybar {
+  background: @bg;
+  color: @text;
+  border-radius: {{ geometry.bar_radius }}px;
+  border: 1px solid alpha(@accent, 0.20);
+}
+
+tooltip {
+  background: @bg_tooltip;
+  color: @text;
+  border: 1px solid @accent;
+  border-radius: 10px;
+}
+tooltip label { padding: 6px 10px; }
+
+#workspaces, #submap, #window, #mode,
+#clock,
+#idle_inhibitor, #pulseaudio, #network, #cpu, #memory,
+#custom-temperature, #disk, #battery, #tray, #custom-power,
+#custom-clickup, #custom-music {
+  background: @bg_module;
+  padding: 2px 12px;
+  margin: 4px 3px;
+  border-radius: {{ geometry.bar_module_radius }}px;
+  border: none;
+}
+
+/* Workspaces */
+#workspaces { padding: 2px 4px; }
+#workspaces button {
+  padding: 0 8px;
+  margin: 2px 2px;
+  color: @muted;
+  background: transparent;
+  border-radius: 8px;
+  min-width: 18px;
+}
+#workspaces button:hover {
+  background: @surface;
+  color: @text;
+  box-shadow: none;
+  text-shadow: none;
+}
+#workspaces button.active {
+  background: linear-gradient(135deg, @accent, @accent2);
+  color: @base;
+  box-shadow: 0 0 10px alpha(@accent, 0.55);
+}
+#workspaces button.urgent {
+  background: alpha(@red, 0.45);
+  color: @base;
+}
+
+#submap { color: @red; background: alpha(@red, 0.18); }
+#window { color: @muted; }
+
+#albumart {
+  background: @bg_module;
+  padding: 2px 2px;
+  margin: 4px 3px;
+  border-radius: 8px;
+}
+
+#custom-music        { color: @accent2; }
+#custom-music.paused { color: @yellow; }
+#custom-music.stopped{ color: @muted; }
+
+#clock { color: @text; background: alpha(@accent, 0.20); }
+
+#idle_inhibitor           { color: @muted; }
+#idle_inhibitor.activated { color: @yellow; background: alpha(@yellow, 0.20); }
+#pulseaudio               { color: @violet; }
+#pulseaudio.muted         { color: @muted; }
+#network                  { color: @blue; }
+#network.disconnected     { color: @red; }
+#cpu                      { color: @cyan; }
+#memory                   { color: @accent; }
+#custom-temperature       { color: @accent2; }
+#custom-temperature.warning  { color: @yellow; }
+#custom-temperature.critical { background: alpha(@red, 0.35); color: @red; }
+#disk                     { color: @green; }
+#battery                  { color: @text; }
+#battery.warning          { color: @yellow; }
+#battery.critical         { background: alpha(@red, 0.35); color: @red; }
+#battery.charging         { color: @green; }
+#tray                     { padding: 2px 8px; }
+#tray > .needs-attention  { background: alpha(@red, 0.4); border-radius: 6px; }
+#custom-clickup           { color: @violet; }
+#custom-clickup.running   { color: @base; background: linear-gradient(135deg, @accent, @accent2); }
+#custom-clickup.idle      { color: @muted; }
+#custom-clickup.error     { color: @red; background: alpha(@red, 0.25); }
+
+#custom-power       { color: @red; padding: 2px 14px; }
+#custom-power:hover { background: alpha(@red, 0.30); color: @base; }

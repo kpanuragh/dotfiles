@@ -1,0 +1,61 @@
+# Nebula Bloom — sampled from ~/Pictures/Wallpapers/dotfiles-bg.jpg,
+# adjusted for WCAG contrast. Single source of truth for the whole desktop.
+name = "nebula-bloom"
+
+[color]
+base        = "#140610"
+mantle      = "#0D0409"
+surface0    = "#241020"
+surface1    = "#33192C"
+surface2    = "#45243B"
+muted       = "#B0849C"   # lowest-contrast colour allowed for text
+subtext     = "#C9A3B6"
+text        = "#F6E4EE"
+magenta     = "#FF4D9D"   # accent
+peach       = "#FF9E6B"   # accent 2
+violet      = "#B76BC2"
+violet_deco = "#A454B0"   # borders/fills ONLY — never text (4.21 on base)
+lilac       = "#C9A9D1"
+blue        = "#7B8FE0"
+cyan        = "#5FD8FF"
+green       = "#7FD8A4"
+yellow      = "#FFC978"
+red         = "#FF5C6E"
+
+[ansi]
+black      = "#241020"
+red        = "#FF5C6E"
+green      = "#7FD8A4"
+yellow     = "#FFC978"
+blue       = "#7B8FE0"
+magenta    = "#FF4D9D"
+cyan       = "#5FD8FF"
+white      = "#C9A3B6"
+br_black   = "#45243B"
+br_red     = "#FF8494"
+br_green   = "#A0E8BF"
+br_yellow  = "#FFDDA6"
+br_blue    = "#9DACEC"
+br_magenta = "#FF7FB8"
+br_cyan    = "#93E6FF"
+br_white   = "#F6E4EE"
+
+[geometry]
+rounding         = 16
+border_size      = 2
+gaps_in          = 8
+gaps_out         = 16
+bar_radius       = 14
+bar_module_radius = 10
+blur_size        = 8      # fallback if the iGPU struggles: 6
+blur_passes      = 2
+blur_vibrancy    = 0.17
+dim_inactive     = true
+dim_strength     = 0.12   # subtle; 0.5 is Hyprland default and far too heavy
+active_opacity   = 0.96
+inactive_opacity = 0.92
+
+[font]
+family   = "JetBrainsMono Nerd Font"
+size     = 12
+bar_size = 13
