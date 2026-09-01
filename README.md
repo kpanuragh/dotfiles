@@ -41,6 +41,7 @@ Stow is the only dependency:
 | `gammastep` | Night-light colour temperature |
 | `gtk` | GTK 3 and GTK 4 theming |
 | `theme` | **Nebula Bloom** — the palette generator that renders every other theme file |
+| `wallpapers` | The image set in `~/Pictures/Wallpapers` used by the switchers |
 
 ### Terminal & shell
 
@@ -101,6 +102,22 @@ The ClickUp scripts additionally read an API token from
 printf '%s' 'pk_YOUR_TOKEN' > ~/.config/clickup/token
 chmod 600 ~/.config/clickup/token
 ```
+
+## Wallpapers
+
+`wallpapers` installs 16 images to `~/Pictures/Wallpapers`, plus a `current`
+symlink marking the active one.
+
+- `Mod+Shift+W` runs `wallpaper-switcher.sh` — pick an image in wofi, it is
+  applied to every monitor and `current` is repointed.
+- `wallpaper-init.sh` restores `current` at login (Hyprland autostart).
+
+Because `current` lives in the repo, switching wallpaper leaves an uncommitted
+change. Commit it to persist the choice across machines, or `git checkout
+wallpapers/` to discard it.
+
+The `wallhaven-*` images come from [wallhaven.cc](https://wallhaven.cc) and are
+redistributed here without recorded licensing. Replace them if you fork this.
 
 ## Theming
 
